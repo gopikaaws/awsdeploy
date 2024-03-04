@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+    stages {
+        stage('git repo & clean') {
+            steps {
+                bat "git clone https://github.com/gopikaaws/awsdeploy.git"
+                bat "mvn clean -f TicketBookingServiceJunitTesting"
+            }
+        }
+     
+    }
+}
